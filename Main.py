@@ -57,7 +57,6 @@ if st.button("Process Data"):
         Cost_Center_Id = pd.DataFrame(
             fetch_and_clean_results(sf, 'Cost_Center__c', "SELECT Id,Name FROM Cost_Center__c")
         )
-        st.dataframe(Cost_Center_Id)
         Cost_Center_Id['Cost_Center_Value'] = Cost_Center_Id['Name'].astype(str).str[:10]
 
         # Read uploaded Excel
